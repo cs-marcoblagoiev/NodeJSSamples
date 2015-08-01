@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <p><%= name %></p>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
 
-  <ul>
-    <%  for(var i=0;i<5; i++) { %>
-        <li>Tuna</li>
-    <% } %>
-  </ul>
+<% include templates/header.ejs %>
 
-  </body>
+<h3><%= videodata.categoryName %></h3>
+
+
+
+<ul>
+  <% videodata.categories.forEach(function(item){ %>
+    <li> <%= item.categoryName %></li>
+  <% }); %>
+
+
+</ul>
+
+</body>
 </html>
